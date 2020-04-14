@@ -1,79 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="./style.css">
-    </head>
-    <body> 
-      <div class="container">
-        
-        <div id="myDIV" class="header">
-          <p class="title">todos</p>
-          <input type="text" id="myInput" placeholder="What needs to be done?">
-          <span onclick="newElement()" class="addBtn">Add</span>
-        </div>
+<head>
+    <title>TodoList</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>todos</h1>
+    </div>
 
-        <ul id="myUL">
+    <div class="add-to-do">
+        <input type="text" placeholder="What needs to be done?" name="name" id="input">
+        <i class="fas fa-plus-circle" id="addInput"></i>
+    </div>
+
+    <div class="content">
+        <ul id="list">
+            <!--<li class="item">
+                <i class="far fa-circle co" job="complete" id=0></i>
+                <p class="text">Drink Coffee</p>
+                <i class="fas fa-trash-alt de" job="delete" id=0></i>
+            </li>-->
         </ul>
-      </div>
-    </body>
-    <script type="text/javascript">
-      var myNodelist = document.getElementsByTagName("LI");
-      var i;
-      for (i = 0; i < myNodelist.length; i++) {
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        myNodelist[i].appendChild(span);
-      }
-
-      var close = document.getElementsByClassName("close");
-      var i;
-      for (i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
-
-      var list = document.querySelector('ul');
-      list.addEventListener('click', function(event) {
-        if (event.target.tagName === 'LI') {
-          event.target.classList.toggle('checked');
-        }
-      }, false);
-
-      // button Thêm
-      function newElement() {
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var t = document.createTextNode(inputValue);
-        li.appendChild(t);
-        // kiểm tra thẻ input
-        if (inputValue === '') {
-          alert("You must write something!");
-        } else {
-          document.getElementById("myUL").appendChild(li);
-        }
-
-        // xóa giá trị thẻ input
-        document.getElementById("myInput").value = "";
-
-        // thêm button xóa 
-        var span = document.createElement("SPAN");
-        var txt = document.createTextNode("\u00D7");
-        span.className = "close";
-        span.appendChild(txt);
-        li.appendChild(span);
-        
-        // gán lại sự kiện cho các button xóa
-        for (i = 0; i < close.length; i++) {
-          close[i].onclick = function() {
-            var div = this.parentElement;
-            div.style.display = "none";
-          }
-        }
-      }
-    </script>
+    </div>
+    <script type="text/javascript" src="./todos.js"></script>
+</body>
 </html>
