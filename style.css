@@ -3,10 +3,11 @@ body{
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    background: linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(62,62,73,0.0032387955182072714) 39%, rgba(0,212,255,1) 100%);
-    
+    /*background: linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(62,62,73,0.0032387955182072714) 39%, rgba(0,212,255,1) 100%);
+    */
     /*background: linear-gradient(338deg, rgba(13,30,209,1) 0%, rgba(38,190,237,0.17130602240896353) 100%, rgba(35,140,190,0.7175245098039216) 100%);
     */
+    background: linear-gradient(325deg, rgba(2,0,36,1) 1%, rgba(40,230,18,0.6615021008403361) 50%, rgba(11,29,12,1) 97%, rgba(8,7,11,0.38699229691876746) 100%);
 }
 /* ---------------container-------------*/
 .container {
@@ -28,8 +29,8 @@ body{
 .add-to-do i{
     position: absolute;
     font-size: 40px;
-    color: #4162f6;
-    margin-left: 2px;
+    color: black;
+    margin-left: 4px;
     cursor: pointer;
 }
 
@@ -42,11 +43,9 @@ body{
     width:400px;
     height: 40px;
     font-size: 16px;
-    border: none;
-    border: 1px solid #333;
+    border: 1px;
     border-radius: 30px;
     text-align: center;
-    background-color: none;
 }
 
 /* ------------ content ------------ */
@@ -79,6 +78,7 @@ body{
 }
 .item i.co:hover{
     cursor: pointer;
+    color: #888;
 }
 .fa-check-circle{
     color:#4162f2;
